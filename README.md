@@ -1,3 +1,3 @@
 # android-basic
 
-Ejemplos básicos de Androig - gettin started
+Ejemplos básicos de Android - getting started
