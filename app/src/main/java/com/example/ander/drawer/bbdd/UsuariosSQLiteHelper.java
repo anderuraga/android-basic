@@ -9,12 +9,17 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class UsuariosSQLiteHelper extends SQLiteOpenHelper {
 
+
+    // If you change the database schema, you must increment the database version.
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "DBUsuarios.db";
+
+
     //Sentencia SQL para crear la tabla de Usuarios
     String sqlCreate = "CREATE TABLE Usuarios (codigo INTEGER, nombre TEXT)";
 
-    public UsuariosSQLiteHelper(Context contexto, String nombre,
-                                SQLiteDatabase.CursorFactory factory, int version) {
-        super(contexto, nombre, factory, version);
+    public UsuariosSQLiteHelper(Context contexto) {
+        super(contexto, DATABASE_NAME , null, DATABASE_VERSION );
     }
 
     @Override

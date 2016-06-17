@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
+import com.example.ander.drawer.R;
 
 public class BaseDatosActivity extends Activity
 {
