@@ -11,17 +11,17 @@
             android:icon="@drawable/ic_storage_black_24dp"
             android:title="Base Datos" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:id="@+id/nav_ejemplo_files"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="Ficheros" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:id="@+id/nav_ejemplo_lista_simple"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="@string/ejemplo_lista_simple" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:id="@+id/nav_ejemplo_lista_canciones"
+            android:icon="@drawable/ic_audiotrack_black_24dp"
+            android:title="@string/ejemplo_lista_canciones" />
     </group>
 
     <item android:title="Communicate">

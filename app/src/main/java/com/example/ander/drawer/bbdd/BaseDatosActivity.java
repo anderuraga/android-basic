@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.ander.drawer.R;
+
 
 public class BaseDatosActivity extends Activity
 {
@@ -41,10 +41,9 @@ public class BaseDatosActivity extends Activity
         btnConsultar = (Button)findViewById(R.id.btnConsultar);
 
         //Abrimos la base de datos 'DBUsuarios' en modo escritura
-        UsuariosSQLiteHelper usdbh =
-                new UsuariosSQLiteHelper(this, "DBUsuarios", null, 1);
+        UsuariosSQLiteHelper dbHelper = new UsuariosSQLiteHelper(this);
 
-        db = usdbh.getWritableDatabase();
+        db = dbHelper.getWritableDatabase();
 
         btnInsertar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

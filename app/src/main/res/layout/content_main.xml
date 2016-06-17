@@ -19,16 +19,17 @@
         android:text="Hello World!" />
 
     <TextView
-        style="@style/textViewCustom"
-        android:text="Estilo Custom" />
+        style="@style/textoCustom"
+        android:text="Custom Layout" />
+
+    <TextView
+        style="@style/textoCustom.bold"
+        android:text="Custom Layout Bold" />
 
 
     <TextView
-        style="@style/textViewCustom.bold"
-        android:text="Estilo Custom Bold" />
+        style="@style/textoCustom.bold.accent"
+        android:text="Custom Layout Bold Acentuado" />
 
-    <TextView
-        style="@style/textViewCustom.colorAccent"
-        android:text="Estilo Custom Accent" />
 
 </LinearLayout>

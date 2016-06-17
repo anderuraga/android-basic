@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ander.drawer">
 
+    <!-- Permisos -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -26,7 +32,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ander.drawer.MainActivity" />
         </activity>
-
         <activity
             android:name=".bbdd.BaseDatosActivity"
             android:label="@string/title_activity_bbdd"
@@ -35,7 +40,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ander.drawer.MainActivity" />
         </activity>
-
         <activity
             android:name=".TabbedActivity"
             android:label="@string/title_activity_tabbed"
@@ -45,6 +49,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.ander.drawer.MainActivity" />
         </activity>
+        <activity android:name=".FilesActivity" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.ander.drawer.MainActivity" />
+        </activity>
+        <activity android:name=".ListviewActivity" />
+        <activity android:name=".ListCancionesActivity"></activity>
     </application>
-
 </manifest>

@@ -1,9 +1,12 @@
 package com.example.ander.drawer;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.ander.drawer.bbdd.BaseDatosActivity;
 import com.example.ander.drawer.settings.SettingsActivity;
@@ -57,6 +61,25 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+
+        String prefConexion = "Conexion ON";
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        if ( !sharedPref.getBoolean("pref_sync",true) ){
+            prefConexion = "Conexion OFF";
+        }else{
+            prefConexion += " Tipo: " + sharedPref.getString("pref_syncConnectionType","no definida");
+        }
+
+
+        String cadena = "";//sharedPref.getString("example_text","anonimo");
+
+        Log.v("MainActivity", prefConexion);
+        Toast.makeText(getApplicationContext(), prefConexion + cadena , Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
@@ -88,11 +111,15 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_ejemplo_bbdd) {
             Intent i = new Intent (getApplicationContext(), BaseDatosActivity.class );
             startActivity(i);
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_ejemplo_files) {
+            Intent i = new Intent (getApplicationContext(), FilesActivity.class );
+            startActivity(i);
+        } else if (id == R.id.nav_ejemplo_lista_simple) {
+            Intent i = new Intent (getApplicationContext(), ListviewActivity.class );
+            startActivity(i);
+        } else if (id == R.id.nav_ejemplo_lista_canciones) {
+            Intent i = new Intent (getApplicationContext(), ListCancionesActivity.class );
+            startActivity(i);
 
         } else if (id == R.id.nav_share) {
 
